@@ -17,6 +17,7 @@ public class Persons {
         
         int repet = 0, imput = -1;
         double media = 0;
+        String faixa = "";
         
         System.out.println(ANSI_PURPLE + "SISTEMA DE REGISTRO!\n" + ANSI_YELLOW + "Registre uma ou mais idades." + ANSI_RESET + "\n");
         while (imput != 0) {
@@ -34,7 +35,17 @@ public class Persons {
             }
         }
         
-        System.out.print(idades);
+        media = media / idades.size();
+        
+        if (media > 60) {
+            faixa = "idosa";
+        } else if (media > 26) {
+            faixa = "adulta";
+        } else {
+            faixa = "jovem";
+        }
+        
+        System.out.println("Sua classe é composta com " + idades.size() + " alunos, e a idade media é de " + media + " sendo assim, uma classe " + faixa);
         
         sc.close();
         System.exit(0);
